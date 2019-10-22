@@ -26,7 +26,7 @@ public class DBBean {
 
 			// 接收数据库的URL,数据库用户名，用户口令，即连接数据库
 
-			conn = DriverManager.getConnection(driver_url, "root", "");
+			conn = DriverManager.getConnection(driver_url, "root", "root");
 
 			if (conn != null) {
 

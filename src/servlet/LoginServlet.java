@@ -31,15 +31,12 @@ public class LoginServlet extends HttpServlet {
 		// Put your code here
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		doPost(request, response);
 	}
 
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("utf-8");
 
@@ -47,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		Message message=new Message();
+		Message message = new Message();
 
 		String phone = request.getParameter("phone");
 
@@ -57,31 +54,27 @@ public class LoginServlet extends HttpServlet {
 
 			if (UserDao.userLogin(phone, password)) {
 
-					System.out.println("success in Server ");
+				System.out.println("success in Server ");
 
-					message.setCode(200);
+				message.setCode(200);
 
-					message.setData("token");
+				message.setData("token");
 
-					message.setMessage("登陆成功");
+				message.setMessage("登陆成功");
 
-					out.print(JSON.toJSONString(message));
+				out.print(JSON.toJSONString(message));
 
-				} else {
+			} else {
 
-					message.setCode(-11);
+				message.setCode(-11);
 
-					message.setData("null");
+				message.setData("null");
 
-					message.setMessage("登录失败");
+				message.setMessage("登录失败");
 
-					out.print(JSON.toJSONString(message));
+				out.print(JSON.toJSONString(message));
 
-				}
-
-
-
-		
+			}
 
 		} catch (SQLException e) {
 

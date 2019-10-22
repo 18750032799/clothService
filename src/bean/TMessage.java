@@ -1,67 +1,55 @@
 package bean;
 
 /**
-
+ * 
  * data 存放 数据库查询出来的数据
-
+ * 
  * @param <T>
-
+ * 
  */
 
 public class TMessage<T> {
 
-    private int code;
+	private int code;
 
-    private String message;
+	private String message;
 
-    private T data;
+	private T data;
 
+	public int getCode() {
 
+		return code;
 
-    public int getCode() {
+	}
 
-        return code;
+	public void setCode(int code) {
 
-    }
+		this.code = code;
 
+	}
 
+	public String getMessage() {
 
-    public void setCode(int code) {
+		return message;
 
-        this.code = code;
+	}
 
-    }
+	public void setMessage(String message) {
 
+		this.message = message;
 
+	}
 
-    public String getMessage() {
+	public T getData() {
 
-        return message;
+		return data;
 
-    }
+	}
 
+	public void setData(T data) {
 
+		this.data = data;
 
-    public void setMessage(String message) {
-
-        this.message = message;
-
-    }
-
-
-
-    public T getData() {
-
-        return data;
-
-    }
-
-
-
-    public void setData(T data) {
-
-        this.data = data;
-
-    }
+	}
 
 }
