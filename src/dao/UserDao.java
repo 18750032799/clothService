@@ -50,4 +50,20 @@ public class UserDao {
 		return list;
 
 	}
+
+	public static boolean registUser(String phone, String password) throws SQLException {
+		boolean flag = false;
+		String sql = "insert into user(phone,password) values(?,?)";
+		preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1, phone);
+		preparedStatement.setString(2, password);
+		int result = preparedStatement.executeUpdate();
+		if (result == 1) {
+			flag = true;
+		} else {
+			flag = false;
+		}
+		return flag;
+
+	}
 }
